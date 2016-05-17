@@ -1,0 +1,98 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/util
+    	http://www.springframework.org/schema/util/spring-util.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd ">
+     
+   	<!--  <bean id="userService" class="com.yc.login.service.impl.UserServiceImpl" p:userMapper-ref="userMapper"/>
+     <bean id="userAction" class="com.yc.login.web.action.UserAction" p:userService-ref="userService"/> -->
+     
+     <!--不手动配置bean，自动扫描bean包，注意：要是有命名空间
+     	base-package：扫描指定的bean包
+     	如果发现
+     	@Controller：表示控制层的bean
+     	@Repository：表示持久层的bean
+		@Service：表示业务层的bean
+		@Component：表示普通的bean
+       -->
+     <context:component-scan base-package="com.yc" />
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <!--数据源  -->
+     <!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+     p:driverClassName="oracle.jdbc.driver.OracleDriver" 
+     p:url="jdbc:oracle:thin:@localhost:1521:orcl"
+     p:username="ssm" p:password="a" /> -->
+     
+     <!-- SqlSessionFactory对象  
+     	p:dataSource-ref：数据源
+     	p:typeAliasesPackage：mybatis实体类指定别名的包
+     	p:mapperLocations：mybatis实体类的映射文件
+     	p:configLocation：mybatis的配置文件所在的位置
+     -->
+    <!--  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" 
+	     p:dataSource-ref="dataSource"
+	     p:typeAliasesPackage="com.yc.login.entity"
+	     p:mapperLocations="classpath:mapper/*Mapper.xml" /> -->
+	    <!--配置映射接口代理实现类的bean ，bean id默认为 映射接口名的首字母小写
+	    	如：接口名UserMapper bean名为userMapper
+	    --> 
+	 <!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" 
+	 	p:sqlSessionFactoryBeanName="sqlSessionFactory"
+	 	p:basePackage="com.yc.login.mapper"
+	 />  -->   
+</beans> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
